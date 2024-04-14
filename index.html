@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tax Calculator</h1>
+        <form id="taxForm">
+            <div class="input-wrapper">
+                <label for="grossIncome">Enter gross annual income <span class="info-icon" title="Gross annual income is your total salary in a year before any deductions">?</span></label>
+                <input type="text" id="grossIncome" placeholder="Enter gross annual income">
+                <div class="error-icon" id="incomeError" title="Please enter a valid number">!</div>
+            </div>
+            <div class="input-wrapper">
+                <label for="extraIncome">Enter extra income <span class="info-icon" title="Extra income is your any additional earnings beyond your regular salary">?</span></label>
+                <input type="text" id="extraIncome" placeholder="Enter extra income from other sources">
+                <div class="error-icon" id="extraIncomeError" title="Please enter a valid number">!</div>
+            </div>
+            <div class="input-wrapper">
+                <label for="ageGroup">Enter age group <span class="info-icon" title="Enter your age group">?</span></label>
+                <select id="ageGroup" placeholder="Select age group">
+                    <option value="" disabled selected hidden>Select age group</option>
+                    <option value="<40">&lt;40</option>
+                    <option value=">=40&<60">&ge; 40 &amp; &lt; 60</option>
+                    <option value=">=60">&ge; 60</option>
+                </select>
+                <div class="error-icon" id="ageError" title="Please select an age group">!</div>
+            </div>
+            <div class="input-wrapper">
+                <label for="deductions">Enter total applicable deductions <span class="info-icon" title="Total applicable deductions are expenses that lower your taxable income">?</span></label>
+                <input type="text" id="deductions" placeholder="Add total applicable deductions">
+                <div class="error-icon" id="deductionsError" title="Please enter a valid number">!</div>
+            </div>
+            <button type="button" id="submitBtn">Submit</button>
+        </form>
+    </div>
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <p id="resultText"></p>
+            <button class="closeBtn">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
